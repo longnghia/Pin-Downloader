@@ -1,0 +1,41 @@
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+            app:title="@string/title_activity_settings">
+
+        <SwitchPreferenceCompat
+                app:key="autoDownload"
+                app:title="@string/auto_download"
+                app:summary="Auto download in background."
+        />
+        <SwitchPreferenceCompat
+                app:key="enableSound"
+                app:title="@string/enable_sound"
+                app:summary="Play sound on a completed download."
+                android:title="@string/auto_download_summary"/>
+
+        <ListPreference
+                app:key="defaultName"
+                app:title="@string/default_name"
+                app:entries="@array/name_entries"
+                app:entryValues="@array/name_values"
+                app:defaultValue="name_id"
+                app:useSimpleSummaryProvider="true"/>
+
+<!--        <EditTextPreference-->
+<!--                app:key="save-path"-->
+<!--                app:title="@string/save_path"-->
+<!--                app:useSimpleSummaryProvider="true"-->
+<!--                android:defaultValue="/storage/emulated/0/Pictures/PinDownloader/"-->
+<!--                android:enabled="false"-->
+
+<!--        />-->
+        <Preference
+                android:title="Save path"
+                android:defaultValue="/storage/emulated/0/Pictures/PinDownloader/"
+                app:summary="/storage/emulated/0/Pictures/PinDownloader/"
+        />
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/pullToRefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+                                                  android:layout_height="match_parent"
+                                                  android:background="@color/white"
+                                                  android:gravity="center"
+                                                  android:orientation="vertical"
+                                                  android:padding="16dp">
+
+        <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/no_internet_image2"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:src="@drawable/no_internet"/>
+
+            <!--        <androidx.appcompat.widget.AppCompatImageView-->
+            <!--                android:id="@+id/no_internet_image"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="240dp"-->
+            <!--                android:src="@drawable/animated1"/>-->
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/main_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:text="@string/no_internet"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#595959"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/secondary_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/check_network"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#757575"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

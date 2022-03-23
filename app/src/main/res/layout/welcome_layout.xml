@@ -1,0 +1,39 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:id="@+id/welcomeLayout"
+                                                   android:clickable="true"
+                                                   android:background="@drawable/bg_gradient"
+>
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:text="Welcome to Pin Downloader!"
+            android:layout_marginTop="43dp"
+            android:autoText="false" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent"
+            android:fontFamily="@font/bad_script" android:textSize="20sp" android:textColor="#F1F1F1"
+            android:shadowColor="#DDDDDD"/>
+    <ImageView
+            android:layout_width="287dp"
+            android:layout_height="521dp" app:srcCompat="@drawable/hello" android:id="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="64dp" android:layout_marginStart="4dp"/>
+    <Button
+            android:id="@+id/start_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/my_button"
+            android:text="Start!" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="16dp"
+            android:visibility="invisible"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

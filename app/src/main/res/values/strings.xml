@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Pin Downloader</string>
+    <string name="no_internet">No internet connection!</string>
+    <string name="check_network">Please check your internet connection.</string>
+    <string name="pd_input_link">Input Link:</string>
+    <string name="pd_download">Download</string>
+    <string name="pd_input_hint">input link here...</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="background">Background</string>
+    <string name="close">Close</string>
+    <string name="download">Download</string>
+    <string name="ok">OK</string>
+    <string name="auto_download">Auto download</string>
+    <string name="enable_sound">Enable sound</string>
+    <string name="auto_download_on">Turned on</string>
+    <string name="default_name">Default name</string>
+    <string name="auto_download_off">Turned off</string>
+    <string name="save_path">Save path</string>
+    <string name="auto_download_summary">Auto download in background with default name.</string>
+    <string name="permission_granted">Permission granted!</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_help">Usage</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails</string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+
+</resources>

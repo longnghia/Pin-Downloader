@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="DialogTheme">
+        <!-- Used for the buttons -->
+<!--        <item name="colorAccent">@android:color/white</item>-->
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <!-- Used for the background -->
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+
+<!--        <item name="android:windowBackground">@color/white</item>-->
+<!--        <item name="android:windowTitleStyle">@style/TextAppearance.GoogleMaterial.Subhead1</item>-->
+<!--        <item name="android:buttonBarStyle">@style/DialogButtonBarStyle</item>-->
+<!--        <item name="android:buttonBarButtonStyle">@style/DialogFillButtonStyle</item>-->
+<!--        <item name="android:windowMinWidthMajor">65%</item>-->
+<!--        <item name="android:windowMinWidthMinor">95%</item>-->
+<!--        <item name="android:buttonBarPositiveButtonStyle">@style/DialogFillButtonStyle</item>-->
+<!--        <item name="android:buttonBarNeutralButtonStyle">@style/DialogTextButtonStyle</item>-->
+<!--        <item name="android:buttonBarNegativeButtonStyle">@style/DialogTextButtonStyle</item>-->
+<!--        <item name="buttonBarNegativeButtonStyle">@style/DialogTextButtonStyle</item>-->
+<!--        <item name="buttonBarNeutralButtonStyle">@style/DialogTextButtonStyle</item>-->
+<!--        <item name="buttonBarPositiveButtonStyle">@style/DialogFillButtonStyle</item>-->
+<!--        <item name="colorAccent">@color/button_color</item>-->
+<!--        <item name="materialButtonStyle">@style/DialogFillButtonStyle</item>-->
+    </style>
+
+    <style name="DialogBodyStyle">
+        <item name="android:textAppearance">?attr/textAppearanceBody2</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+    <style name="DialogButtonBarStyle">
+        <item name="android:paddingTop">16dp</item>
+    </style>
+    <style name="DialogContainerStyle">
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+    </style>
+    <style name="DialogContentStyle">
+        <item name="android:paddingTop">12dp</item>
+    </style>
+    <style name="DialogListItemIconStyle">
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
+    <style name="DialogListItemTextStyle">
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="DialogTextStyle">
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:paddingTop">20dp</item>
+        <item name="android:paddingRight">4dp</item>
+        <item name="android:paddingBottom">20dp</item>
+        <item name="android:fontFamily">sans-serif-regular</item>
+    </style>
+
+<style name="ScrollThumbStyle">
+        <item name="android:scrollbarAlwaysDrawVerticalTrack">true</item>
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:fadeScrollbars">false</item>
+        <item name="android:scrollbarThumbVertical">@drawable/icon_black</item>
+</style>
+</resources>
