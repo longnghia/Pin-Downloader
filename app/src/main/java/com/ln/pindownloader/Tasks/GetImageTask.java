@@ -1,6 +1,5 @@
 package com.ln.pindownloader.Tasks;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
@@ -11,7 +10,7 @@ import com.ln.pindownloader.Utils.ImageUtils;
 
 public class GetImageTask extends AsyncTask<Bitmap, Void, Boolean> {
     Context context;
-    AlertDialog dialog;
+    androidx.appcompat.app.AlertDialog dialog;
     String savepath;
     ImageView imageView;
     EditText editText;
@@ -19,15 +18,15 @@ public class GetImageTask extends AsyncTask<Bitmap, Void, Boolean> {
     Button negativeButton;
     ProgressBar progressBar;
 
-    public GetImageTask(Context context, AlertDialog dialog, String savepath) {
+    public GetImageTask(Context context, androidx.appcompat.app.AlertDialog dialog, String savepath) {
         this.context = context;
         this.dialog = dialog;
         this.savepath = savepath;
         this.imageView = dialog.findViewById(R.id.dialog_image);
         this.progressBar = dialog.findViewById(R.id.dialog_progress_bar);
         this.editText = dialog.findViewById(R.id.dialog_edit_text);
-        this.positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
-        this.negativeButton = dialog.getButton(AlertDialog.BUTTON_NEGATIVE);
+        this.positiveButton = dialog.getButton(androidx.appcompat.app.AlertDialog.BUTTON_POSITIVE);
+        this.negativeButton = dialog.getButton(androidx.appcompat.app.AlertDialog.BUTTON_NEGATIVE);
     }
 
     @Override

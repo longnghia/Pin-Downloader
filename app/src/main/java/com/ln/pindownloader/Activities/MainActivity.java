@@ -5,7 +5,6 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -81,11 +80,11 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = DefaultUtils.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        sharedPreferences.registerOnSharedPreferenceChangeListener((sharedPreferences1, key) -> {
-            String s = sharedPreferences1.getAll().toString();
-            Log.d(TAG, "onCreate: sharedPreferences key change\n"+key);
-            Log.d(TAG, "onCreate: sharedPreferences change\n="+s);
-        });
+//        sharedPreferences.registerOnSharedPreferenceChangeListener((sharedPreferences1, key) -> {
+//            String s = sharedPreferences1.getAll().toString();
+//            Log.d(TAG, "onCreate: sharedPreferences key change\n"+key);
+//            Log.d(TAG, "onCreate: sharedPreferences change\n="+s);
+//        });
 
         boolean autoDownload = sharedPreferences.getBoolean("autoDownload", false);
         firstLaunch = sharedPreferences.getBoolean("firstLaunch", true);
@@ -150,13 +149,16 @@ public class MainActivity extends AppCompatActivity {
             Log.d(TAG, "onCreate: isgranted=" + true);
             Log.d(TAG, "onCreate: path=" + Environment.getExternalStorageDirectory().getPath() + "/");
             File file = new File(FileUtils.getAppDir());
-            if (!file.exists())
+            if (!file.exists()) {
                 if (!file.mkdirs()) {
                     Toast.makeText(this, "Failed to create app folder!", Toast.LENGTH_LONG);
                 } else {
                     Log.d(TAG, "onCreate: app path created");
+                    iconFolder.setVisibility(View.VISIBLE);
                 }
-            ;
+            } else {
+                iconFolder.setVisibility(View.VISIBLE);
+            }
         }
 
         this.buttonDownload.setOnClickListener(view -> {
@@ -185,29 +187,39 @@ public class MainActivity extends AppCompatActivity {
                 }
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 this.startActivity(intent);
-            }
-            catch (ActivityNotFoundException e){
+            } catch (ActivityNotFoundException e) {
                 Log.e(TAG, "onCreate: intent not found:\n");
                 e.printStackTrace();
-                Toast.makeText(this, "Please install Pinterest first",Toast.LENGTH_SHORT);
+                Toast.makeText(this, "Please install Pinterest first", Toast.LENGTH_SHORT);
             }
 
         });
 
-        try {
-            Drawable icon = this.getPackageManager().getApplicationIcon("com.android.documentsui");
-            iconFolder.setImageDrawable(icon);
-        } catch (PackageManager.NameNotFoundException e) {
-            Log.w(TAG, "onCreate: Can not set to target folder icon");
-            e.printStackTrace();
-        }
+        /* change icfolder to app icon */
+//        try {
+//            Drawable icon = this.getPackageManager().getApplicationIcon("com.android.documentsui");
+//            iconFolder.setImageDrawable(icon);
+//        } catch (PackageManager.NameNotFoundException e) {
+//            Log.w(TAG, "onCreate: Can not set to target folder icon");
+//            e.printStackTrace();
+//        }
 
         this.iconFolder.setOnClickListener(v -> {
-//            this.startActivity();
-            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-            Log.d(TAG, "onCreate: uri = " + Uri.parse(FileUtils.getAppDir()));
-            intent.setDataAndType(Uri.parse(FileUtils.getAppDir()), "file/*");
-            startActivity(intent);
+            Uri selectedUri = Uri.parse(FileUtils.getAppDir());
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setDataAndType(selectedUri, "resource/folder");
+
+            if (intent.resolveActivityInfo(getPackageManager(), 0) != null) {
+                startActivity(intent);
+            } else {
+//                Toast.makeText(this, "No explorer installed!",Toast.LENGTH_SHORT);
+                Log.e(TAG, "onCreate: no activity handle intent ACTION_VIEW: " + FileUtils.getAppDir());
+
+                intent = new Intent(Intent.ACTION_VIEW);
+                Uri uri = Uri.parse(FileUtils.getAppDir());
+                intent.setDataAndType(uri, "resource/folder");
+                startActivity(Intent.createChooser(intent, "Open folder"));
+            }
         });
 
     }
@@ -248,5 +260,11 @@ public class MainActivity extends AppCompatActivity {
             default:
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG, "onPause: onpause");
     }
 }

@@ -16,8 +16,11 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.ln.pindownloader.R;
 import com.ln.pindownloader.Tasks.PinterestTask;
 import com.ln.pindownloader.Utils.DefaultUtils;
+import com.ln.pindownloader.Utils.FileUtils;
 import com.ln.pindownloader.Utils.HttpUtils;
 import org.json.JSONObject;
+
+import java.io.File;
 
 public class ShareReceiverActivity extends ComponentActivity {
     String TAG = "ShareReceiverActivity";
@@ -42,7 +45,6 @@ public class ShareReceiverActivity extends ComponentActivity {
         boolean storageGranted = sharedPreferences.getBoolean("storageGranted", false);
 
 
-
         if (firstLaunch) {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
@@ -56,6 +58,16 @@ public class ShareReceiverActivity extends ComponentActivity {
             startActivity(intent);
             finish();
             return;
+        }
+        File appDir = new File(FileUtils.getAppDir());
+        if (!appDir.exists()) {
+            Log.d(TAG, "onCreate: creating app dir");
+            if (!appDir.mkdirs()) {
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                finish();
+                return;
+            }
         }
 
         if (HttpUtils.checkInternetConnection(this)) {
@@ -87,35 +99,37 @@ public class ShareReceiverActivity extends ComponentActivity {
             if (type.equals("text/plain")) {
                 Log.d(TAG, "onCreate: intent received!");
 
-                new MaterialAlertDialogBuilder(this,R.style.ThemeOverlay_MaterialComponents_MaterialAlertDialog)
-                        .setMessage("Loading data ...")
-                        .setOnDismissListener(dialog1 -> {
-                            this.finish();
-                        })
-                        .setPositiveButton(R.string.download, (dialog1, which) -> {
-                        })
-                        .setNegativeButton(R.string.close, (dialog1, which) -> {
-                            return;
-                        })
-                        .setView(constraintLayout)
-                        .show();
-                if (true)return;
+//                androidx.appcompat.app.AlertDialog dialog =  new MaterialAlertDialogBuilder(this,R.style.ThemeOverlay_MaterialComponents_MaterialAlertDialog)
+//                        .setMessage("Loading data ...")
+//                        .setOnDismissListener(dialog1 -> {
+//                            this.finish();
+//                        })
+//                        .setPositiveButton(R.string.download, (dialog1, which) -> {
+//                        })
+//                        .setNegativeButton(R.string.close, (dialog1, which) -> {
+//                            return;
+//                        })
+//                        .setView(constraintLayout)
+//                        .show();
+//                if (true)return;
+
+
                 /* show dialog */
-                AlertDialog dialog =
-                        new AlertDialog.Builder(this)
+                androidx.appcompat.app.AlertDialog dialog =
+                        new MaterialAlertDialogBuilder(this)
 //                        .setTitle("Pin Downloader")
 
-                        .setMessage("Loading data ...")
-                        .setOnDismissListener(dialog1 -> {
-                            this.finish();
-                        })
-                        .setPositiveButton(R.string.download, (dialog1, which) -> {
-                        })
-                        .setNegativeButton(R.string.close, (dialog1, which) -> {
-                            return;
-                        })
-                        .setView(constraintLayout)
-                        .show();
+                                .setMessage("Loading data ...")
+                                .setOnDismissListener(dialog1 -> {
+                                    this.finish();
+                                })
+                                .setPositiveButton(R.string.download, (dialog1, which) -> {
+                                })
+                                .setNegativeButton(R.string.close, (dialog1, which) -> {
+                                    return;
+                                })
+                                .setView(constraintLayout)
+                                .show();
 
                 Button positiveButton = dialog
                         .getButton(AlertDialog.BUTTON_POSITIVE);
@@ -129,7 +143,7 @@ public class ShareReceiverActivity extends ComponentActivity {
                     Log.d(TAG, "onCreate: input=" + input);
                     input = input.substring(input.indexOf("http"));
 
-                    PinterestTask pinterestTask = new PinterestTask(this, sharedPreferences,dialog, info);
+                    PinterestTask pinterestTask = new PinterestTask(this, sharedPreferences, dialog, info);
                     pinterestTask.execute(input);
                 }
             }

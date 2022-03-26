@@ -1,6 +1,5 @@
 package com.ln.pindownloader.Tasks;
 
-import android.app.AlertDialog;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -24,22 +23,19 @@ public class GetBitmapTask extends AsyncTask<String, Void, Bitmap> {
     ImageView imageView = null;
     ProgressBar progressBar = null;
     Button buttonDownload = null;
-    AlertDialog dialog;
-    TextView infoSize;
+    androidx.appcompat.app.AlertDialog dialog;
 
     int fileSize;
 
-    public GetBitmapTask(ImageView imageView, ProgressBar progressBar, Button buttonDownload, AlertDialog dialog) {
+    public GetBitmapTask(ImageView imageView, ProgressBar progressBar, Button buttonDownload, androidx.appcompat.app.AlertDialog dialog) {
         this.imageView = imageView;
         this.progressBar = progressBar;
         this.buttonDownload = buttonDownload;
         this.dialog = dialog;
         ConstraintLayout constraintLayout = dialog.findViewById(R.id.dialog_constrain_layout);
-        this.infoSize = constraintLayout.findViewById(R.id.dialog_info_size);
     }
 
-    public GetBitmapTask(AlertDialog dialog) {
-        this.infoSize = dialog.findViewById(R.id.dialog_info_size);
+    public GetBitmapTask(androidx.appcompat.app.AlertDialog dialog) {
     }
 
     public GetBitmapTask() {

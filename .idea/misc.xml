@@ -14,6 +14,7 @@
         <entry key="app/src/main/res/drawable/ic_gear.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/drawable/ic_info_circle.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/drawable/ic_pinterest.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/drawable/my_button.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/activity_help.xml" value="0.17" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.35625" />
@@ -34,6 +35,8 @@
         <entry key="app/src/main/res/layout/welcome_layout.xml" value="0.25" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.19635416666666666" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher2.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher2_round.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/xml/root_preferences.xml" value="0.33" />
       </map>

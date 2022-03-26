@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
     <style name="DialogTheme">
         <!-- Used for the buttons -->
-<!--        <item name="colorAccent">@android:color/white</item>-->
+        <!--        <item name="colorAccent">@android:color/white</item>-->
         <!-- Used for the title and text -->
-        <item name="android:textColorPrimary">#FFFFFF</item>
+        <!--        <item name="android:textColorPrimary">#FFFFFF</item>-->
         <!-- Used for the background -->
-        <item name="android:background">@android:color/transparent</item>
-        <item name="android:layout_marginLeft">10dp</item>
-        <item name="android:layout_marginRight">10dp</item>
+        <!--        <item name="android:background">@android:color/transparent</item>-->
+        <!--        <item name="android:layout_marginLeft">10dp</item>-->
+        <!--        <item name="android:layout_marginRight">10dp</item>-->
+        <item name="windowMinWidthMajor">0%</item>
+        <item name="windowMinWidthMinor">0%</item>
 
-<!--        <item name="android:windowBackground">@color/white</item>-->
-<!--        <item name="android:windowTitleStyle">@style/TextAppearance.GoogleMaterial.Subhead1</item>-->
-<!--        <item name="android:buttonBarStyle">@style/DialogButtonBarStyle</item>-->
-<!--        <item name="android:buttonBarButtonStyle">@style/DialogFillButtonStyle</item>-->
-<!--        <item name="android:windowMinWidthMajor">65%</item>-->
-<!--        <item name="android:windowMinWidthMinor">95%</item>-->
-<!--        <item name="android:buttonBarPositiveButtonStyle">@style/DialogFillButtonStyle</item>-->
-<!--        <item name="android:buttonBarNeutralButtonStyle">@style/DialogTextButtonStyle</item>-->
-<!--        <item name="android:buttonBarNegativeButtonStyle">@style/DialogTextButtonStyle</item>-->
-<!--        <item name="buttonBarNegativeButtonStyle">@style/DialogTextButtonStyle</item>-->
-<!--        <item name="buttonBarNeutralButtonStyle">@style/DialogTextButtonStyle</item>-->
-<!--        <item name="buttonBarPositiveButtonStyle">@style/DialogFillButtonStyle</item>-->
-<!--        <item name="colorAccent">@color/button_color</item>-->
-<!--        <item name="materialButtonStyle">@style/DialogFillButtonStyle</item>-->
+        <!--        <item name="android:windowBackground">@color/white</item>-->
+        <!--        <item name="android:windowTitleStyle">@style/TextAppearance.GoogleMaterial.Subhead1</item>-->
+        <!--        <item name="android:buttonBarStyle">@style/DialogButtonBarStyle</item>-->
+        <!--        <item name="android:buttonBarButtonStyle">@style/DialogFillButtonStyle</item>-->
+        <!--        <item name="android:windowMinWidthMajor">65%</item>-->
+        <!--        <item name="android:windowMinWidthMinor">95%</item>-->
+        <!--        <item name="android:buttonBarPositiveButtonStyle">@style/DialogFillButtonStyle</item>-->
+        <!--        <item name="android:buttonBarNeutralButtonStyle">@style/DialogTextButtonStyle</item>-->
+        <!--        <item name="android:buttonBarNegativeButtonStyle">@style/DialogTextButtonStyle</item>-->
+        <!--        <item name="buttonBarNegativeButtonStyle">@style/DialogTextButtonStyle</item>-->
+        <!--        <item name="buttonBarNeutralButtonStyle">@style/DialogTextButtonStyle</item>-->
+        <!--        <item name="buttonBarPositiveButtonStyle">@style/DialogFillButtonStyle</item>-->
+        <!--        <item name="colorAccent">@color/button_color</item>-->
+        <!--        <item name="materialButtonStyle">@style/DialogFillButtonStyle</item>-->
     </style>
 
     <style name="DialogBodyStyle">
@@ -65,11 +66,11 @@
         <item name="android:fontFamily">sans-serif-regular</item>
     </style>
 
-<style name="ScrollThumbStyle">
+    <style name="ScrollThumbStyle">
         <item name="android:scrollbarAlwaysDrawVerticalTrack">true</item>
         <item name="android:scrollbarStyle">outsideOverlay</item>
         <item name="android:scrollbars">vertical</item>
         <item name="android:fadeScrollbars">false</item>
         <item name="android:scrollbarThumbVertical">@drawable/icon_black</item>
-</style>
+    </style>
 </resources>

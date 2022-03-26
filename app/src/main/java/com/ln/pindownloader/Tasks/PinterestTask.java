@@ -1,6 +1,5 @@
 package com.ln.pindownloader.Tasks;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -32,14 +31,14 @@ public class PinterestTask extends AsyncTask<String, Void, Void> {
     Button positiveButton;
     Button negativeButton;
 
-    AlertDialog dialog;
+    androidx.appcompat.app.AlertDialog dialog;
     JSONObject info;
 
     Boolean autoDownload;
 
     int fileSize;
 
-    public PinterestTask(Context context, SharedPreferences sharedPreferences, AlertDialog dialog, JSONObject info) {
+    public PinterestTask(Context context, SharedPreferences sharedPreferences, androidx.appcompat.app.AlertDialog dialog, JSONObject info) {
         this.dialog = dialog;
         this.context = context;
         this.autoDownload = DefaultUtils.autoDownload;
@@ -52,9 +51,9 @@ public class PinterestTask extends AsyncTask<String, Void, Void> {
         editText = constraintLayout.findViewById(R.id.dialog_edit_text);
 
         positiveButton = dialog
-                .getButton(AlertDialog.BUTTON_POSITIVE);
+                .getButton(androidx.appcompat.app.AlertDialog.BUTTON_POSITIVE);
         negativeButton = dialog
-                .getButton(AlertDialog.BUTTON_NEGATIVE);
+                .getButton(androidx.appcompat.app.AlertDialog.BUTTON_NEGATIVE);
     }
 
     @Override

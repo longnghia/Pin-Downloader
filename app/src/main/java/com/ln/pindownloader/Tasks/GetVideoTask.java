@@ -1,6 +1,5 @@
 package com.ln.pindownloader.Tasks;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -17,29 +16,26 @@ public class GetVideoTask extends AsyncTask<String, Void, Boolean> {
     String TAG = "DownloadImageTask";
 
     ProgressBar progressBar ;
-    AlertDialog dialog;
+    androidx.appcompat.app.AlertDialog dialog;
     Context context;
 
     ImageView imageView;
     EditText editText;
     Button positiveButton;
     Button negativeButton;
-    TextView infoSize;
 
     public GetVideoTask() {
     }
 
-    public GetVideoTask(Context context, AlertDialog dialog) {
+    public GetVideoTask(Context context, androidx.appcompat.app.AlertDialog dialog) {
         this.context = context;
         this.dialog = dialog;
         imageView = dialog.findViewById(R.id.dialog_image);
         progressBar = dialog.findViewById(R.id.dialog_progress_bar);
         editText = dialog.findViewById(R.id.dialog_edit_text);
         positiveButton = dialog
-                .getButton(AlertDialog.BUTTON_POSITIVE);
+                .getButton(androidx.appcompat.app.AlertDialog.BUTTON_POSITIVE);
         ConstraintLayout constraintLayout = dialog.findViewById(R.id.dialog_constrain_layout);
-
-        this.infoSize = constraintLayout.findViewById(R.id.dialog_info_size);
     }
 
     @Override

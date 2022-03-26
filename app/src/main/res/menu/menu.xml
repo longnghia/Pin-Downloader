@@ -12,5 +12,6 @@
             android:title="Settings"
             android:icon="@drawable/ic_gear"
             app:showAsAction="always"
+            android:visible="false"
     />
 </menu>

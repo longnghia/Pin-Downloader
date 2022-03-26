@@ -49,7 +49,21 @@
         <!-- Status bar color. -->
 <!--        <item name="statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>-->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
 
+    <style name="Theme.MaterialComponents.TransparentDialog" parent="Theme.MaterialComponents.Dialog">
+                <item name="android:windowBackground">@android:color/transparent</item>
+                <item name="android:windowNoTitle">true</item>
+                <item name="android:windowIsTranslucent">true</item>
+                <item name="android:windowContentOverlay">@null</item>
+                <item name="android:windowAnimationStyle">@android:style/Animation</item>
+                <item name="android:colorBackgroundCacheHint">@null</item>
+
+                <item name="colorSurface">#80121212</item>
+        <item name="materialAlertDialogTheme">@style/DialogTheme</item>
+       <!--        <item name="android:colorBackground">@android:color/transparent</item>-->
 
     </style>
+
+
 </resources>

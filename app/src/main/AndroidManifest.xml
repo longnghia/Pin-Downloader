@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.ln.pindownloader" >
 
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission
@@ -24,6 +25,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PinDownloader" >
+
         <activity
             android:name=".Activities.SettingsActivity"
             android:exported="true"
@@ -47,7 +49,10 @@
         <activity
             android:name=".Activities.ShareReceiverActivity"
             android:excludeFromRecents="true"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.TransparentDialog"
+
+        >
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
 

@@ -14,13 +14,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintTop_toTopOf="parent" android:padding="10dp">
         <ImageView
-                android:layout_height="200dp" tools:srcCompat="@tools:sample/avatars"
+                tools:srcCompat="@tools:sample/avatars"
                 android:id="@+id/dialog_image"
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_width="200dp" android:adjustViewBounds="true"/>
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:layout_margin="5dp"/>
         <ProgressBar
                 style="?android:attr/progressBarStyle"
                 android:layout_width="wrap_content"
@@ -37,9 +41,9 @@
             android:id="@+id/dialog_edit_text" android:layout_gravity="bottom|center_horizontal"
             android:minHeight="48dp"
             android:selectAllOnFocus="true"
-            android:visibility="invisible"
+            android:visibility="gone"
 
-            android:textSize="12dp" android:textAlignment="center" android:textColor="#3C3C3C"
+            android:textSize="12dp" android:textAlignment="center"
             app:layout_constraintTop_toBottomOf="@+id/dialog_frame_layout" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

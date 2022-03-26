@@ -27,18 +27,18 @@
             android:layout_marginTop="67dp" android:layout_marginEnd="16dp" app:layout_constraintEnd_toEndOf="parent"/>
     <ImageView
             android:layout_width="64dp"
-            android:layout_height="64dp" app:srcCompat="@drawable/logo_official" android:id="@+id/ic_pinterest"
+            android:layout_height="64dp" app:srcCompat="@drawable/ic_pinterest" android:id="@+id/ic_pinterest"
             android:layout_marginEnd="16dp"
             android:tooltipText="Open Pinterest"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="16dp"/>
     <ImageView
             android:layout_width="64dp"
-            android:layout_height="64dp" app:srcCompat="@drawable/ic_folder" android:id="@+id/ic_folder"
+            android:layout_height="64dp" app:srcCompat="@drawable/ic_folder_round" android:id="@+id/ic_folder"
             app:layout_constraintStart_toStartOf="parent"
             android:tooltipText="Open Folder"
             android:layout_marginStart="16dp" app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="16dp"
-
-            android:visibility="invisible"/>
+            android:visibility="invisible"
+/>
 </androidx.constraintlayout.widget.ConstraintLayout>

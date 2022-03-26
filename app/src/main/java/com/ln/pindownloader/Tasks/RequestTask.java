@@ -2,13 +2,12 @@ package com.ln.pindownloader.Tasks;
 
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
 import com.ln.pindownloader.Utils.HttpUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -40,6 +39,7 @@ public class RequestTask extends AsyncTask<String, Void, JSONObject> {
             if (httpURLConnection.getResponseCode() == HttpURLConnection.HTTP_MOVED_TEMP) {
                 link = httpURLConnection.getHeaderField("location");
                 Log.d(TAG, "redirected link: " + link);
+                /* Todo : no request --> anr */
             }
         } catch (IOException e) {
             e.printStackTrace();
