@@ -2,6 +2,7 @@ package com.ln.pindownloader.Tasks;
 
 import android.os.AsyncTask;
 import android.util.Log;
+import com.ln.pindownloader.Utils.APIUtils;
 import com.ln.pindownloader.Utils.HttpUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,7 +33,7 @@ public class RequestTask extends AsyncTask<String, Void, JSONObject> {
 
         Log.d(TAG, "Requesting " + link + " ...");
         URL url;
-        HttpURLConnection httpURLConnection = null, apiHttpURLConnection = null;
+        HttpURLConnection httpURLConnection , apiHttpURLConnection = null;
         httpURLConnection = HttpUtils.request(link);
         if (httpURLConnection == null) return null;
         try {
@@ -55,7 +56,7 @@ public class RequestTask extends AsyncTask<String, Void, JSONObject> {
         String param = "{\"options\":{\"field_set_key\":\"unauth_react_main_pin\",\"id\":\"" + id + "\"}}";
         String API = null;
         try {
-            API = "https://www.pinterest.com/resource/PinResource/get/?data=" + URLEncoder.encode(param, "UTF-8");
+            API = APIUtils.PinterestAPI+ URLEncoder.encode(param, "UTF-8");
             Log.d(TAG, "doInBackground: API=" + API);
 
             /* jsoup request
@@ -90,21 +91,21 @@ public class RequestTask extends AsyncTask<String, Void, JSONObject> {
                         String videoUrl = videoList.getJSONObject(("V_720P")).getString("url");
                         result.put("videoUrl", videoUrl);
                     } else {
-                        Log.d(TAG, "doInBackground: not have V_720P: " + videoList.toString());
+                        Log.d(TAG, "doInBackground: not have V_720P: " + videoList);
                     }
                 }
 
-                String origUrl = null;
+                String origUrl;
                 JSONObject images = data.getJSONObject("images");
                 JSONObject orig = images.getJSONObject("orig");
                 origUrl = orig.getString("url");
 
-                if (origUrl == null) {
+                if (origUrl.isEmpty()) {
                     Log.e(TAG, "origin image url null");
                     return null;
                 }
                 result.put("url", origUrl);
-                Log.d(TAG, "doInBackground: result=" + result.toString());
+                Log.d(TAG, "doInBackground: result=" + result);
                 return result;
             } else {
                 Log.e(TAG, "doInBackground: data NULL");
