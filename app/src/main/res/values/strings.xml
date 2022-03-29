@@ -27,6 +27,7 @@
     <string name="permission_granted">Permission granted!</string>
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_help">Usage</string>
+    <string name="policy">By tapping "Continue", you indicate that you have read our <a href='https://longnghia.github.io/Webs/policy/PinDownloader.html'>Privacy policy. </a></string>
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>

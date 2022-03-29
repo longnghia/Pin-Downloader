@@ -9,14 +9,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.*;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -95,9 +93,14 @@ public class MainActivity extends AppCompatActivity {
         if (firstLaunch) {
             setContentView(R.layout.welcome_layout);
             Button startBtn = findViewById(R.id.start_button);
+
+            TextView textView =findViewById(R.id.policyTextView);
+            textView.setClickable(true);
+            textView.setMovementMethod(LinkMovementMethod.getInstance());
 //            startBtn.setVisibility(View.INVISIBLE);
 
             new Handler().postDelayed(() -> {
+                textView.setVisibility(View.VISIBLE);
                 startBtn.setVisibility(View.VISIBLE);
             }, 1000);
 
