@@ -1,3 +1,5 @@
+**This repo is archived - the app not working anymore. Pin-Downloader 2 is comming soon 😺️**
+
 # Pin Downloader
 
 ## Android application to download Pinterest image.
